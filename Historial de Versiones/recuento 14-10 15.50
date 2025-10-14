@@ -3,7 +3,7 @@ izq a derecha
 arriba a abajo
 
 tablas y cosas hechas:
-
+14-10-25 16.41
 usuarios - estan todos los atributos, 5 inserts 
 prestamos - estan todos los atributos, 5 inserts
 ejemplares - estan todos los atributos, 1 insert
@@ -11,8 +11,8 @@ editoriales - estan todos los atributos, 0 inserts
 empleados - estan todos los atributos, 0 inserts
 libros - estan todos los atributos, 5 inserts
 generos - estan todos los atributos, 5 inserts
-cargos - 
-libros_autores
-cargos_turnos
-autores
-turnos
+cargos - falta que termine samir
+libros_autores -
+cargos_turnos - falta que termine samir / cree
+autores -
+turnos - falta que termine samir / cree
