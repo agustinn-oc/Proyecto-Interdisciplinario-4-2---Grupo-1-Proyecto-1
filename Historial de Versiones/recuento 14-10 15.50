@@ -1,0 +1,18 @@
+tablas:
+izq a derecha
+arriba a abajo
+
+tablas y cosas hechas:
+
+usuarios - estan todos los atributos, 
+prestamos
+ejemplares
+editoriales
+empleados
+libros
+generos
+cargos
+libros_autores
+cargos_turnos
+autores
+turnos
