@@ -12,7 +12,11 @@ empleados - estan todos los atributos, 0 inserts
 libros - estan todos los atributos, 5 inserts
 generos - estan todos los atributos, 5 inserts
 cargos - falta que termine samir
-libros_autores -
+libros_autores - 
 cargos_turnos - falta que termine samir / cree
-autores -
+autores - estan todos los atributos, 5 inserts
 turnos - falta que termine samir / cree
+
+
+para el futuro:
+cambiar todas los atributos que esten solos (ej: nombre) y ponerle la variable al lado
