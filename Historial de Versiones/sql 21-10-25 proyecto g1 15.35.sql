@@ -168,18 +168,23 @@ foreign key (id_editorial) references editoriales(id_editorial)
 #insert into libros values (default, "9780140274059", "Rainbow Six", 740, default, 5, "ingresar id editorial aca dsps");
 
 create table ejemplares(
-id_ejemplar int auto_increment,
-localidad varchar(30),
-id_prestamo int,
-id_libro int,
-primary key(id_ejemplar),
-foreign key(id_prestamo) references prestamos(id_prestamo),
-foreign key(id_libro) references libros(id_libro)
+  id_ejemplar int auto_increment primary key,
+  id_prestamo int null,
+  id_libro int not null,
+ foreign key(id_prestamo) references prestamos(id_prestamo) 
+ foreign key(id_libro) references libros(id_libro)
+);
+
+create table localidades(
+ id_ejemplar int primary key,
+ localidad_libro varchar(30) not null,
+ direccion varchar(150),
+ foreign key(id_ejemplar) references ejemplares(id_ejemplar)
 );
 
 #crear otra tabla localidades 1 a 1 con ejemplares
-
-#INSERT INTO ejemplares VALUES (12313, "Chubut 1283", 12742871);
+#INSERT INTO ejemplares VALUES (12324, 121, 1231);
+#INSERT INTO localidades VALUES (134321, 1232, 'figueroa alcorta', 'monterrey 123');
 
 
 
