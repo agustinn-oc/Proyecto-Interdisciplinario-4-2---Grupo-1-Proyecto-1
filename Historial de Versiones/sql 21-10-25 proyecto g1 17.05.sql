@@ -169,7 +169,7 @@ foreign key (id_editorial) references editoriales(id_editorial)
 
 create table localidades(
  id_localidad int primary key,
- localidad_libro varchar(30) not null
+ localidad_libro varchar(60) not null
 );
 
 create table ejemplares(
