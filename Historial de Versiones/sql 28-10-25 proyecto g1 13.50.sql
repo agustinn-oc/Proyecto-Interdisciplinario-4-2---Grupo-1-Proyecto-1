@@ -89,9 +89,9 @@ id_usuario int auto_increment primary key,
 nombre_usuario varchar (30),
 apellido_usuario varchar (40),
 mail_usuario varchar(80),
-telefono_usuario int (10),
+telefono_usuario int,
 direccion_usuario varchar (100),
-dni_usuario int (8)
+dni_usuario int
 );
 insert into usuarios(nombre_usuario, apellido_usuario, mail_usuario, telefono_usuario, direccion_usuario, dni_usuario) 
 values ("Agustin", "Zowmir", "agutinzow@gmail.com", 1175820756, "paysandu 5432", 30945821);
@@ -114,7 +114,7 @@ id_editorial int auto_increment primary key,
 nombre_editorial varchar (50),
 direccion varchar (50),
 antiguedad date,
-telefono int (10),
+telefono int,
 email varchar (50),
 cantidad_empleados int
 );
@@ -123,7 +123,7 @@ create table empleados(
 id_empleado int auto_increment primary key,
 nombre_empleado varchar(50),
 apellido_empleado varchar (50),
-dni_empleado int (10),
+dni_empleado int,
 email varchar (50),
 id_cargo int,
 foreign key (id_cargo) references cargos(id_cargo)
