@@ -193,10 +193,9 @@ create table ejemplares(
 
 
 
-#samir - arreglar las tablas de cargos
-#zowmir - hacer otra vez la tabla
+#samir - arreglar las tablas de cargos !!!!! Hecho :D
+#zowmir - hacer otra vez la tabla !!!! Hecho :D
 
-#empleados no esta??? qie re mierda
 
 
 
