@@ -13,3 +13,5 @@
 -Código: Contiene el archivo .sql de la base de datos y lo programado en Python.
 
 -Diccionario Offline: Contiene el link del Google Spreadsheets para el Diccionario de Datos
+
+-Logo: Contiene la imagen del logo de la bilbioteca a la que se hace referencia en la base de datos
