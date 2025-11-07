@@ -252,3 +252,15 @@ select generos.nombre, count(libros.id_libro) from libros
 inner join generos on generos.id_genero = libros.id_genero
 group by (libros.id_genero);
 
+
+select libros.id_libro,
+libros.titulo, 
+libros.isbn,
+usuarios.id_usuario,
+usuarios.nombre_usuario, 
+usuarios.mail_usuario
+from libros
+inner join prestamos on prestamos.id_libro = libros.id_libro
+inner join usuarios on usuarios.id_usuario = prestamos.id_usuario
+where estado_prestamo = "No devuelto" or estado_prestamo = "Perdido";
+
