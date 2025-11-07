@@ -253,6 +253,7 @@ inner join generos on generos.id_genero = libros.id_genero
 group by (libros.id_genero);
 
 
+#libros y alumnos con préstamos vencidos
 select libros.id_libro,
 libros.titulo, 
 libros.isbn,
