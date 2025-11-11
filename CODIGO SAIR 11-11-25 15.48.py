@@ -249,6 +249,51 @@ def borrarporid(cursor):
         elif confirmar == "no":
             print("GO FUCK YOURSELF")
 #hola :3
+
+def EliminarLibrosPorTitulo(cursor):
+    titulo = str(input("Ingresar Titulo del Libro: "))
+    titulo = [titulo]
+    cursor.execute("SELECT id_libro FROM libros WHERE titulo = %s;", titulo)
+    librosdict = cursor.fetchall()
+    libros = []
+    for i in librosdict:
+        libros.append(i["id_libro"])
+    print(libros)
+    for l in libros:
+        abb.insertar(l)
+
+    idingresada = int(input("Ingrese la id que quiere buscar: "))
+    if abb.buscar(idingresada) == False:
+        print("El id que ingresaste no existe, bye")
+    elif abb.buscar(idingresada) == True:
+        print("¿Estas Seguro que quieres Eliminar el Libro?")
+        confirmar = str(input("Respuesta (si / no): "))
+        if confirmar == "si":
+            id = [idingresada]
+            cursor.execute("DELETE FROM prestamos WHERE id_libro = %s;", id, )
+            cnx.commit()
+            cursor.execute("DELETE FROM libros_autores WHERE id_libro = %s;", id, )
+            cnx.commit()
+            cursor.execute("DELETE FROM libros WHERE id_libro = %s;", id, )
+            cnx.commit()
+
+            print("Lista actualizada de libros:")
+            cursor.execute("""
+                           SELECT libros.titulo, libros.isbn, libros.num_pag, generos.nombre, editoriales.nombre_editorial, localidades.localidad_libro 
+                           FROM libros inner join generos on generos.id_genero = libros.id_genero
+                           inner join editoriales on editoriales.id_editorial = libros.id_editorial
+                           inner join localidades on localidades.id_localidad = libros.id_localidad
+                               """)
+            todos = cursor.fetchall()
+            for t in todos:
+                print(t)
+        elif confirmar == "no":
+            print("Cerrando Programa...")
+
+
+
+#if menu == 1:
+
 if menu == 3:
     while True:
         print("Buscar por:")
@@ -270,4 +315,15 @@ if menu == 3:
     elif opt == 2:
         BuscarLibrosISBN(cursor)
 elif menu == 2:
-    borrarporid(cursor)
+    while True:
+        print("Eliminar por:")
+        print("1- Id del libro, 2- Nombre del libro")
+        opt = int(input("Seleccion: "))
+        if (opt >= 1 and opt <= 2):
+            break
+        else:
+            print("VALOR ERRONEO : VOLVER A INTENTAR")
+    if opt == 1:
+        borrarporid(cursor)
+    elif opt == 2:
+        EliminarLibrosPorTitulo(cursor)
