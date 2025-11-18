@@ -6,8 +6,6 @@
 
 # Branches:
 
--Carpetas de campo: Contiene la documentación individual de cada alumno.
-
 -src: Contiene codigo fuente de Python.
 
 -database: Contiene codigo base de SQL.
