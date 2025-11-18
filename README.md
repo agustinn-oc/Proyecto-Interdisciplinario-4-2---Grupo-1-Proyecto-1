@@ -8,10 +8,6 @@
 
 -Carpetas de campo: Contiene la documentación individual de cada alumno.
 
--DER: Contiene el DER
-
--Código: Contiene el archivo .sql de la base de datos y lo programado en Python.
-
--Diccionario Offline: Contiene el link del Google Spreadsheets para el Diccionario de Datos
-
--Logo: Contiene la imagen del logo de la bilbioteca a la que se hace referencia en la base de datos
+-src: Contiene codigo fuente de Python.
+-database: Contiene codigo base de SQL.
+-docs: Contiene la documentacion del proyecto, como las carpetas de campo, el manual de usuario y el tecnico, el diccionario de datos, etc.
