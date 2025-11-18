@@ -9,5 +9,7 @@
 -Carpetas de campo: Contiene la documentación individual de cada alumno.
 
 -src: Contiene codigo fuente de Python.
+
 -database: Contiene codigo base de SQL.
+
 -docs: Contiene la documentacion del proyecto, como las carpetas de campo, el manual de usuario y el tecnico, el diccionario de datos, etc.
