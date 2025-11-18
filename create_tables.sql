@@ -1,4 +1,4 @@
-#11.07 18-11-25
+#15.15 18-11-25
 drop database if exists biblioteca;
 create database biblioteca;
 use biblioteca;
@@ -121,13 +121,12 @@ values
 values
  ("Charly","Garcia","cantababien@gmail.com",1134125642,"Avenida Coronel Díaz 1905",76543801);
  
- 
 create table editoriales(
 id_editorial int auto_increment primary key,
 nombre_editorial varchar (50),
 direccion varchar (50),
 antiguedad date,
-telefono int,
+telefono bigint,
 email varchar (50),
 cantidad_empleados int
 );
@@ -137,9 +136,9 @@ insert into editoriales values(default, "Temas De Hoy", "P.º de Recoletos, 4, 4
 insert into editoriales values(default, "Minotauro", "Av. Diagonal, 662-664, Barcelona", "1955-07-13", 934928000, "proyectosminotauro@planeta.es", 435);
 insert into editoriales values(default, "Grijalbo", "Avenida Belgrano, Arenales 1256, C1061", "1957-03-22", 1143837181, "grijalboeditorial@grijalbo.com", 445);
 insert into editoriales values(default, "Berkley Publishing Group", "Humberto Primo 555", "1955-06-24", 1152354400, "berkleypublicity@penguinrandomhouse.com.", 467);
-insert into editoriales values(default, "Planeta Cómic", "Av. San Martin 1235", "1949-11-8", "542616308244", "editorialplanetamanuscritos@planeta.com.mx.",  50);
-insert into editoriales values(default, "Editorial Ivrea", "Alsina 98", "1997-07-12", "532696306248", "lineamanga@editorialivrea.com", 200);
-insert into editoriales values(default, "Alfaguara", " Agustin De Bethencourt 1928003, Madrid", "1964-10-12", "1324581047", "consumerservices@penguinrandomhouse.com", 241);
+insert into editoriales values(default, "Planeta Cómic", "Av. San Martin 1235", "1949-11-8", 7616308244, "editorialplanetamanuscritos@planeta.com.mx.",  50);
+insert into editoriales values(default, "Editorial Ivrea", "Alsina 98", "1997-07-12", 6963062481, "lineamanga@editorialivrea.com", 200);
+insert into editoriales values(default, "Alfaguara", " Agustin De Bethencourt 1928003, Madrid", "1964-10-12", 1324581047, "consumerservices@penguinrandomhouse.com", 241);
 
 create table empleados(
 id_empleado int primary key auto_increment,
