@@ -1,4 +1,4 @@
-#00.40 18-11-25
+#11.07 18-11-25
 drop database if exists biblioteca;
 create database biblioteca;
 use biblioteca;
@@ -106,18 +106,18 @@ telefono_usuario int,
 direccion_usuario varchar (100),
 dni_usuario int
 );
-insert into usuarios(nombre_usuario, apellido_usuario, mail_usuario, telefono_usuario, direccion_usuario, dni_usuario) 
+insert into usuarios(nombre_usuario, apellido_usuario, mail_usuario, telefono_usuario, direccion_usuario, dni_usuario)
 values ("Franco", "Armani", "notengomanos@gmail.com", 1175820756, "paysandu 5432", 30945821);
-insert into usuarios(nombre_usuario, apellido_usuario, mail_usuario, telefono_usuario, direccion_usuario, dni_usuario) 
+insert into usuarios(nombre_usuario, apellido_usuario, mail_usuario, telefono_usuario, direccion_usuario, dni_usuario)
 values
  ("Exequiel", "Zeballos", "elchanguito@gmail.com", 1126136892, "Espinosa 721", 39094874);
- insert into usuarios(nombre_usuario, apellido_usuario, mail_usuario, telefono_usuario, direccion_usuario, dni_usuario) 
+ insert into usuarios(nombre_usuario, apellido_usuario, mail_usuario, telefono_usuario, direccion_usuario, dni_usuario)
 values
  ("Brayan", "Cardenas", "brayancar@gmail.com", 1188234987, "Av. Gaona 3241", 47820194);
- insert into usuarios(nombre_usuario, apellido_usuario, mail_usuario, telefono_usuario, direccion_usuario, dni_usuario) 
+ insert into usuarios(nombre_usuario, apellido_usuario, mail_usuario, telefono_usuario, direccion_usuario, dni_usuario)
 values
  ("Gustavo","Cerati","cantorebien@gmail.com",1131254442,"Cucha Cucha 2001", 80149871);
- insert into usuarios(nombre_usuario, apellido_usuario, mail_usuario, telefono_usuario, direccion_usuario, dni_usuario) 
+ insert into usuarios(nombre_usuario, apellido_usuario, mail_usuario, telefono_usuario, direccion_usuario, dni_usuario)
 values
  ("Charly","Garcia","cantababien@gmail.com",1134125642,"Avenida Coronel Díaz 1905",76543801);
  
@@ -151,11 +151,11 @@ id_cargo int,
 foreign key (id_cargo) references cargos(id_cargo)
 );
 
-insert into empleados values (default, "Samir", "Rivera", 123456789, "riverasamir@gmail.com", 1);
+insert into empleados values (default, "Samir", "Rivera", 123456781, "riverasamir@gmail.com", 1);
 insert into empleados values (default, "Agustin", "Ortiz", 213456789, "ortizagustin@gmail.com", 1);
-insert into empleados values (default, "Agustin", "Zowmir", 123456789, "zowmiragustin@gmail.com", 2);
-insert into empleados values (default, "Agustin", "Lerman", 123456789, "lermanagustin@gmail.com", 3);
-insert into empleados values (default, "Thiago", "Da Cruz", 123456789, "dacruzthiago@gmail.com", 3);
+insert into empleados values (default, "Agustin", "Zowmir", 123456783, "zowmiragustin@gmail.com", 2);
+insert into empleados values (default, "Agustin", "Lerman", 123456785, "lermanagustin@gmail.com", 3);
+insert into empleados values (default, "Thiago", "Da Cruz", 123456788, "dacruzthiago@gmail.com", 3);
 
 create table localidades(
  id_localidad int primary key auto_increment,
@@ -195,7 +195,7 @@ insert into libros values (default, "9780140274059", "Rainbow Six", 740, 5, 5, 5
 insert into libros values (default, "9788478886548", "Harry Potter y la Piedra Filosofal", 264, 1, 1, 1);
 insert into libros values (default, "9789507300882", "El libro troll", 192, 2, 2 , 2);
 insert into libros values (default, "9788478886548", "Harry Potter y la Piedra Filosofal", 264, 1, 1, 1);
-insert into libros values (default, "9789504977117", "El eternauta", 351, 3, 6, 6); 
+insert into libros values (default, "9789504977117", "El eternauta", 351, 3, 6, 6);
 insert into libros values (default, "9788411402569", "Blue Lock 19", 192, 6, 6, 7);
 insert into libros values (default, "9788418450495", "Captain Tsubasa Vol1", 344, 6, 7, 8);
 insert into libros values (default, "9788420400266", "Uncharted: El Tesoro de Drake", 368, 4, 8, 10);
@@ -304,7 +304,7 @@ left join prestamos on prestamos.id_libro = libros.id_libro
 where prestamos.id_libro is null or prestamos.estado_prestamo="Devuelto";
 
 #libros baja disponibilidad
-select libros.titulo, count(libros.id_libro) as "Cantidad de libros" from libros 
+select libros.titulo, count(libros.id_libro) as "Cantidad de libros" from libros
 inner join prestamos on prestamos.id_libro = libros.id_libro
 where prestamos.id_libro is null or prestamos.estado_prestamo="Devuelto"
 group by libros.titulo
@@ -317,9 +317,8 @@ inner join usuarios on usuarios.id_usuario = prestamos.id_usuario
 where estado_prestamo = "No devuelto" or estado_prestamo = "Perdido";
 
 #libros más prestados
-select libros.titulo, count(libros.id_libro) as "Cantidad de prestamos" from libros 
+select libros.titulo, count(libros.id_libro) as "Cantidad de prestamos" from libros
 inner join prestamos on prestamos.id_libro = libros.id_libro
 group by libros.titulo
 order by count(libros.id_libro) desc
 limit 5;
-
