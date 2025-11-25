@@ -390,7 +390,7 @@ def LibrosConMenorDisponibilidad():
                    group by libros.titulo
                    order by count(libros.id_libro) asc;
 
-                   -""")
+                   """)
     listareporte2 = cursor.fetchall()
     tituloreporte2 = "Reporte - Libros con baja disponibilidad.json"
     CrearReporte(cursor, tituloreporte2, listareporte2)
@@ -488,6 +488,7 @@ def InsertarLibros(nombre,dni,correo,saldo):
     cursor.execute(sql,(nombre,dni,correo,saldo))
     cnx.commit()
     return cursor.lastrowid
+
 
 
 
